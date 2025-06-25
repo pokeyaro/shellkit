@@ -9,15 +9,22 @@ BUILD_OUT = $(BUILD_DIR)/libnative.so
 PACKAGE_OUT = syscall/syslib.so
 CFLAGS = -shared -fPIC
 
-# Python toolchain (via venv)
-VENV_BIN = .venv/bin
-PYTHON = $(VENV_BIN)/python
-PIP    = $(VENV_BIN)/pip
-BLACK  = $(VENV_BIN)/black
-ISORT  = $(VENV_BIN)/isort
-RUFF   = $(VENV_BIN)/ruff
-MYPY   = $(VENV_BIN)/mypy
-PYTEST = $(VENV_BIN)/pytest
+# Python toolchain - detect CI vs local environment
+ifeq ($(CI),true)
+	# CI environment uses system PATH
+	BIN_PREFIX =
+else
+	# Local development uses virtual environment
+	BIN_PREFIX = .venv/bin/
+endif
+
+PYTHON = $(BIN_PREFIX)python
+PIP    = $(BIN_PREFIX)pip
+BLACK  = $(BIN_PREFIX)black
+ISORT  = $(BIN_PREFIX)isort
+RUFF   = $(BIN_PREFIX)ruff
+MYPY   = $(BIN_PREFIX)mypy
+PYTEST = $(BIN_PREFIX)pytest
 
 # Declare phony targets
 .PHONY: build package clean test fmt lint type check install start
