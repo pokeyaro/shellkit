@@ -6,6 +6,13 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [0.1.0-beta5] - 2025-06-26
+
+### Fixed
+- **Linux**: Fixed automatic detection of compiled shared library files
+- Resolved `syslib.so` vs `syslib.cpython-311-x86_64-linux-gnu.so` filename mismatch
+
+
 ## [0.1.0-beta4] - 2025-06-26
 
 ### Fixed
