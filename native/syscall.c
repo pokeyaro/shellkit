@@ -101,14 +101,32 @@ static inline ssize_t _internal_syscall_write(int fd, const char *buf, size_t co
 static inline void _internal_syscall_exit(int code) {
 #if defined(__linux__) && defined(__x86_64__)
 
-    __asm__ volatile (
-        "movq $60, %%rax\n\t"
-        "movq %0, %%rdi\n\t"
+    // Use exit_group (231) instead of exit (60) for proper process termination
+    //
+    // Why exit_group vs exit:
+    // - exit (60):        Only terminates the calling thread
+    // - exit_group (231): Terminates all threads in the process group
+    //
+    // ☠️ In Python's multi-threaded environment (GC, signal handlers, etc.),
+    // using exit (60) leaves other threads running, causing the process
+    // to become a zombie. exit_group ensures clean process-wide termination.
+    //
+    // Register constraints:
+    // - rax: syscall number (231 = SYS_exit_group)
+    // - rdi: exit code (first argument)
+    // - clobbers: rcx, r11 (modified by syscall instruction), memory
+    register long rax asm("rax") = 231;  // SYS_exit_group
+    register long rdi asm("rdi") = code;
+
+    asm volatile(
         "syscall\n\t"
         :
-        : "r"((long)code)
-        : "rax", "rdi", "rcx", "r11", "memory"
+        : "r"(rax), "r"(rdi)
+        : "rcx", "r11", "memory"
     );
+
+    // Tell compiler this function never returns (helps with optimization)
+    __builtin_unreachable();
 
 #elif defined(__APPLE__) && defined(__x86_64__)
 

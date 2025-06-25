@@ -6,7 +6,31 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
-## [0.1.0] - 2025-06-24
+## [0.1.0-beta4] - 2025-06-26
+
+### Fixed
+- **Linux**: Fixed exit command hanging and creating zombie processes
+- Replaced SYS_exit with SYS_exit_group for proper multi-threaded process termination
+- Exit command now works correctly across all supported platforms
+
+
+## [0.1.0-beta3] - 2025-06-25
+
+### Added
+- Python 3.13 support
+- Multi-platform wheel building (Linux, macOS Intel/ARM)
+
+### Changed
+- Improved CI/CD pipeline with cross-platform testing
+
+
+## [0.1.0-beta2] - 2025-06-25
+
+### Fixed
+- C extension build configuration for proper wheel packaging
+
+
+## [0.1.0-beta1] - 2025-06-24
 
 ### ✨ Added
 
