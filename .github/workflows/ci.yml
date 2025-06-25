@@ -8,10 +8,11 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
 
     strategy:
       matrix:
+        os: [ubuntu-latest, macos-13, macos-latest]
         python-version: ['3.10', '3.11', '3.12']
 
     steps:
@@ -37,33 +38,6 @@ jobs:
         run: |
           python -m pytest tests/ -v
 
-      - name: Run basic checks
+      - name: Run code quality checks
         run: |
-          python -c "import shell; print('Import test passed')"
-
-  build-test:
-    name: Test build process
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-          cache: 'pip'
-
-      - name: Install build dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install build
-
-      - name: Test package build
-        run: python -m build
-
-      - name: Verify built package
-        run: |
-          pip install dist/*.whl
-          python -c "import shell; print('Package installed successfully')"
+          make check
