@@ -38,6 +38,7 @@ dev = [
     "pytest",   # Test framework
     "build",    # Package builder
     "twine",    # PyPI uploader
+    "tomli",    # TOML parsing (always install for dev)
 ]
 
 # Entry points
