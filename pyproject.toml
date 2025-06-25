@@ -39,6 +39,7 @@ dev = [
     "build",    # Package builder
     "twine",    # PyPI uploader
     "tomli",    # TOML parsing (always install for dev)
+    "types-setuptools",  # Type stubs for setuptools
 ]
 
 # Entry points
