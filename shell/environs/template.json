@@ -1,0 +1,25 @@
+{
+  "USER": "anonymous",
+  "HOME": "/home/anonymous",
+  "SHELL": "/bin/pysh",
+  "PWD": {
+    "current": "~",
+    "previous": ""
+  },
+  "PS1": "pysh ➜  ",
+  "LANG": "en",
+  "SYSINFO": {
+    "arch": "unknown",
+    "uname": "unknown",
+    "kernel_version": "x.y.z",
+    "os_release": "unknown",
+    "cpu": "unknown",
+    "cores": 0,
+    "logical_cores": 0,
+    "hyperthreading": false,
+    "mem_total": "0GB",
+    "disk_total": "0GB",
+    "serial_number": "unknown"
+  },
+  "HISTORY_SIZE": 0
+}
