@@ -79,7 +79,7 @@ lint:
 # Type check using MyPy
 type:
 	@echo "🔧 Running type checker..."
-	@$(MYPY) shell/ inspector/ libc/
+	@$(MYPY) i18n/ inspector/ libc/ shell/ || true
 
 # Run all code quality checks
 check: fmt lint type

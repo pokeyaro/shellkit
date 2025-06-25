@@ -11,7 +11,7 @@ from pathlib import Path
 
 # Python 3.10 compatibility
 try:
-    import tomllib  # type: ignore[import-untyped]
+    import tomllib
 except ImportError:
     try:
         import tomli as tomllib
