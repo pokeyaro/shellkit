@@ -20,6 +20,14 @@ Installation guidance: Now recommends GitHub releases over package managers for 
 Updated installation hints across all supported languages (EN, JA, KO, ZH)
 Simplified installation instructions to use most reliable method
 
+Build System
+
+Breaking: Upgraded cibuildwheel from v2.19.2 to v3.0 for modern Python support
+Added Python 3.13 support across all platforms (macOS, Linux)
+Added Linux ARM64 (aarch64) architecture support for better Raspberry Pi and AWS Graviton compatibility
+Simplified build matrix to reduce CI overhead while maintaining platform coverage
+Enhanced cross-platform wheel building with latest toolchain
+
 
 ## [0.1.0-beta6] - 2025-06-26
 
