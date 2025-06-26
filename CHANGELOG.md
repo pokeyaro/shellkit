@@ -6,6 +6,21 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [0.1.0-beta7] - 2025-06-26
+
+Fixed
+
+sleep command: Fixed countdown display leaving residual characters on completion
+help system: Updated glow installation hints to avoid package manager compatibility issues
+Improved terminal output clearing in countdown functionality
+
+Changed
+
+Installation guidance: Now recommends GitHub releases over package managers for glow
+Updated installation hints across all supported languages (EN, JA, KO, ZH)
+Simplified installation instructions to use most reliable method
+
+
 ## [0.1.0-beta6] - 2025-06-26
 
 ### Changed

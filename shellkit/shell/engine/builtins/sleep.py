@@ -120,7 +120,7 @@ def sleep_builtin(args: list[str]) -> ExitCode:
 
             # Print done message if defined
             if done_msg:
-                println(f"\r\033[32m{done_msg}\033[0m")
+                println(f"\r\033[K\033[32m{done_msg}\033[0m")
 
         return EXIT_SUCCESS
 
