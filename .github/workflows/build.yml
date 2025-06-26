@@ -32,11 +32,16 @@ jobs:
     name: Build Linux aarch64 wheels
     steps:
       - uses: actions/checkout@v4
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
       - name: Build wheels
         uses: pypa/cibuildwheel@v3.0.0
         env:
           CIBW_ARCHS: "aarch64"
           CIBW_BUILD: "cp310-* cp311-* cp312-* cp313-*"
+
       - name: Upload
         uses: actions/upload-artifact@v4
         with:
@@ -125,3 +130,25 @@ jobs:
         with:
           user: __token__
           password: ${{ secrets.PYPI_API_TOKEN }}
+
+  # ───────────────────────────────────────────────────────────────
+  # Summarize built wheels
+  summarize-wheels:
+    name: Check wheel count
+    runs-on: ubuntu-latest
+    needs: [build-linux-x86_64, build-linux-aarch64, build-macos-arm64, build-macos-x86_64]
+    if: always()
+
+    steps:
+      - name: Download all built wheels
+        uses: actions/download-artifact@v4
+        with:
+          pattern: wheels-*
+          merge-multiple: true
+          path: dist/
+
+      - name: List built wheels
+        run: ls -lh dist/*.whl || echo "No wheels found."
+
+      - name: Count wheels
+        run: echo "✅ Built $(ls dist/*.whl | wc -l) wheels total."
