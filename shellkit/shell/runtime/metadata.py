@@ -1,7 +1,7 @@
 """
 runtime/metadata.py
 
-Extracts project metadata from pyproject.toml and syscall build time.
+Extracts project metadata from pyproject.toml and the build time of syscall syslib.
 """
 
 import os
@@ -21,24 +21,34 @@ except ImportError:
 
 def get_metadata() -> tuple[str, str, str]:
     """
-    Reads project name and version from package metadata or pyproject.toml,
-    and fetches the build time of syscall/syslib.so (ctime).
+    Returns combined project metadata including name, version, and build time.
 
     Returns:
-        A tuple of (name, version, build_time_str)
+        A tuple of (name, version, build_time)
+    """
+    name, version = get_project_info()
+    build_time = get_syslib_build_time()
+    return name, version, build_time
+
+
+def get_project_info() -> tuple[str, str]:
+    """
+    Returns the project name and version.
+
+    It first tries to read from the installed package metadata.
+    If that fails, it attempts to parse pyproject.toml (development mode).
+
+    Returns:
+        A tuple of (name, version)
     """
     name = "PYSH"
     version = "MAJOR.MINOR.PATCH"
-    build_time = "MM-YYYY"
 
-    # Get name and version
     try:
-        # Try installed package metadata first
         dist = importlib.metadata.distribution("ShellKit")
         name = dist.metadata["Name"] or name
         version = dist.metadata["Version"] or version
     except importlib.metadata.PackageNotFoundError:
-        # Development fallback: try pyproject.toml
         if tomllib:
             pyproject_path = Path(__file__).resolve().parents[3] / "pyproject.toml"
             if pyproject_path.exists():
@@ -51,23 +61,28 @@ def get_metadata() -> tuple[str, str, str]:
                 except Exception:
                     pass
 
-    # Get build time from syslib.so
-    try:
-        # Try to find syslib.so via syscall module
-        import shellkit.syscall as syscall
-        if hasattr(syscall, "__file__") and syscall.__file__:
-            syslib_path = Path(syscall.__file__).parent / "syslib.so"
-            if syslib_path.exists():
-                ctime = os.path.getctime(syslib_path)
-                build_time = time.strftime("%b %Y", time.localtime(ctime))
-    except (ImportError, Exception):
-        # Fallback: try relative path
-        syslib_path = Path(__file__).resolve().parents[2] / "syscall" / "syslib.so"
-        if syslib_path.exists():
-            try:
-                ctime = os.path.getctime(syslib_path)
-                build_time = time.strftime("%b %Y", time.localtime(ctime))
-            except Exception:
-                pass
+    return name, version
 
-    return name, version, build_time
+
+def get_syslib_build_time() -> str:
+    """
+    Returns the build time (ctime) of syslib*.so in the syscall directory.
+
+    Format: 'Jun 2025'. Returns 'MM-YYYY' if not found or on error.
+
+    Returns:
+        A formatted build time string
+    """
+    build_time = "MM-YYYY"
+
+    try:
+        base_dir = Path(__file__).resolve().parents[3]
+        syscall_dir = base_dir / "syscall"
+        candidates = list(syscall_dir.glob("syslib*.so"))
+        if candidates:
+            ctime = os.path.getctime(candidates[0])
+            return time.strftime("%b %Y", time.localtime(ctime))
+    except Exception:
+        pass
+
+    return build_time

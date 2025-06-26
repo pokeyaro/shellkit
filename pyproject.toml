@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 # Project metadata
 [project]
 name = "ShellKit"
-version = "0.1.0-beta7"
+version = "0.1.0-beta8"
 authors = [{ name = "Pokeya" }]
 description = "A teaching-oriented simulation of system call formatting in Python"
 readme = "README.md"

@@ -6,6 +6,17 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [0.1.0-beta8] - 2025-06-26
+
+Changed
+
+Refactored runtime/metadata.py: split get_metadata() into get_project_info() and get_syslib_build_time() for clarity
+
+Fixed
+
+Fixed incorrect detection of syslib*.so build time when installed via pip
+
+
 ## [0.1.0-beta7] - 2025-06-26
 
 Fixed
