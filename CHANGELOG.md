@@ -6,6 +6,17 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [0.1.0] - 2025-06-26
+
+### Features
+- Initial release to PyPI!
+- Custom `printf` / `println` / `sprintf` utilities (via libc module)
+- i18n support: English, Chinese, Japanese, Korean (`.json` dictionaries)
+- Structured `libc`, `shell`, `syscall`, `inspector` modules
+- Tracing and debugging decorators for development
+- Custom shell runtime with command dispatch support
+
+
 ## [0.1.0-beta10] - 2025-06-26
 
 ### Added
