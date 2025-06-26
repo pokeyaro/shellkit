@@ -1,4 +1,4 @@
-from libc.printf import sprintf
+from shellkit.libc.printf import sprintf
 
 
 def test_sprintf_basic():

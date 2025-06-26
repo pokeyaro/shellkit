@@ -1,5 +1,5 @@
 import ctypes
-from libc.write import write_cstr
+from shellkit.libc.write import write_cstr
 
 
 def test_write_cstr():

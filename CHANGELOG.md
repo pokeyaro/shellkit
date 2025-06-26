@@ -6,6 +6,34 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [0.1.0-beta6] - 2025-06-26
+
+### Changed
+- **Breaking**: Restructured package layout to follow Python standards
+- Moved all modules under unified `shellkit` package namespace
+- Updated import paths: `from shell import *` → `from shellkit.shell import *`
+- Fixed scattered package installation in site-packages
+
+### Fixed
+- Resolved package structure causing modules to install as separate top-level packages
+- Updated all internal import statements to use new package structure
+- Fixed Makefile paths for new directory layout
+- Corrected file path resolution in metadata and copyright modules
+- Standardized import statement ordering throughout codebase
+
+### Technical
+- Package now installs as single `shellkit/` directory instead of scattered modules
+- Maintains backward compatibility through proper package structure
+- All entry points and CLI commands remain unchanged
+- Implemented consistent import ordering: standard library → project modules → relative imports
+- Updated build system to target macOS 14.0+ for better compatibility
+
+### Development
+- Established import style guide for consistent code organization
+- Fixed cross-platform compilation warnings
+- Improved package discovery and shared library detection
+
+
 ## [0.1.0-beta5] - 2025-06-26
 
 ### Fixed

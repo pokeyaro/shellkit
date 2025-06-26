@@ -1,12 +1,28 @@
 # Makefile for ShellKit
 # Supports: Linux/macOS, Python 3.10+
 
+# Platform-specific configuration
+UNAME_S := $(shell uname -s)
+UNAME_M := $(shell uname -m)
+
+ifeq ($(UNAME_S),Darwin)
+    # macOS configuration
+    export MACOSX_DEPLOYMENT_TARGET = 14.0
+    PLATFORM_INFO = macOS $(MACOSX_DEPLOYMENT_TARGET)+ ($(UNAME_M))
+else ifeq ($(UNAME_S),Linux)
+    # Linux configuration
+    PLATFORM_INFO = Linux ($(UNAME_M))
+else
+    # Other platforms
+    PLATFORM_INFO = $(UNAME_S) ($(UNAME_M))
+endif
+
 # Native build config
 CC = gcc
 SRC = native/syscall.c native/libc.c
 BUILD_DIR = build
 BUILD_OUT = $(BUILD_DIR)/libnative.so
-PACKAGE_OUT = syscall/syslib.so
+PACKAGE_OUT = shellkit/syscall/syslib.so
 CFLAGS = -shared -fPIC
 
 # Python toolchain - detect CI vs local environment
@@ -38,6 +54,7 @@ clean:
 
 # Compile native syscall library and copy to project
 build: clean
+	@echo "📦 Building for: $(PLATFORM_INFO)"
 	@mkdir -p $(BUILD_DIR)
 	@echo "📦 Compiling: $(SRC) → $(BUILD_OUT)"
 	@$(CC) $(CFLAGS) -o $(BUILD_OUT) $(SRC) 2>&1 \
@@ -79,7 +96,7 @@ lint:
 # Type check using MyPy
 type:
 	@echo "🔧 Running type checker..."
-	@$(MYPY) i18n/ inspector/ libc/ shell/ || true
+	@$(MYPY) shellkit/ || true
 
 # Run all code quality checks
 check: fmt lint type
@@ -87,4 +104,4 @@ check: fmt lint type
 
 # Start the interactive shell
 start:
-	@$(PYTHON) -m shell.main
+	@$(PYTHON) -m shellkit.shell.main

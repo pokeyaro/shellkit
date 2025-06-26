@@ -1,5 +1,5 @@
 import time
-from libc import flush, write
+from shellkit.libc import flush, write
 
 
 COUNT = 10_000

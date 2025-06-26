@@ -1,5 +1,5 @@
 import timeit
-from libc import flush, write, write_bytes
+from shellkit.libc import flush, write, write_bytes
 
 
 s = "hello" * 100

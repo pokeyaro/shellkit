@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 # Project metadata
 [project]
 name = "ShellKit"
-version = "0.1.0-beta5"
+version = "0.1.0-beta6"
 authors = [{ name = "Pokeya" }]
 description = "A teaching-oriented simulation of system call formatting in Python"
 readme = "README.md"
@@ -47,28 +47,22 @@ dev = [
 
 # Entry points
 [project.scripts]
-pysh = "shell.main:main"
+pysh = "shellkit.shell.main:main"
 
 # Package discovery
 [tool.setuptools.packages.find]
 where = ["."]
-include = [
-    "shell*",
-    "libc*",
-    "syscall*",
-    "i18n*",
-    "inspector*",
-]
+include = ["shellkit*"]
 
 # Package data (non-Python files to include)
 [tool.setuptools.package-data]
-"syscall" = ["syslib.so"]                    # Compiled syscall library
-"i18n.lang" = ["*.json"]                     # Translation files
-"shell.environs" = ["template.json"]         # Environment templates
-"shell.docs.manuals.en" = ["*.md"]           # English documentation
-"shell.docs.manuals.ja" = ["*.md"]           # Japanese documentation
-"shell.docs.manuals.ko" = ["*.md"]           # Korean documentation
-"shell.docs.manuals.zh" = ["*.md"]           # Chinese documentation
+"shellkit.syscall" = ["syslib.so"]                    # Compiled syscall library
+"shellkit.i18n.lang" = ["*.json"]                     # Translation files
+"shellkit.shell.environs" = ["template.json"]         # Environment templates
+"shellkit.shell.docs.manuals.en" = ["*.md"]           # English documentation
+"shellkit.shell.docs.manuals.ja" = ["*.md"]           # Japanese documentation
+"shellkit.shell.docs.manuals.ko" = ["*.md"]           # Korean documentation
+"shellkit.shell.docs.manuals.zh" = ["*.md"]           # Chinese documentation
 
 # Development tools configuration
 [tool.black]

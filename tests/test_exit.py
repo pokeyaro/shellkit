@@ -1,5 +1,5 @@
 import pytest
-from libc import print, atexit, exit, _exit
+from shellkit.libc import print, atexit, exit, _exit
 
 
 def cleanup1():
