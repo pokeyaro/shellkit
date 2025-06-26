@@ -6,8 +6,6 @@ Core utilities and shared state for debug tracing and counter control.
 
 from typing import Any, Callable, TypeVar
 
-from shellkit.libc import println
-
 
 F = TypeVar('F', bound=Callable[..., Any])
 
@@ -73,15 +71,18 @@ def _get_next_counter() -> int:
     return _debug_counter
 
 
-def _debug_print(emoji: str, prefix: str, message: str) -> None:
+def _debug_print(emoji: str, prefix: str, message: str, *args: Any) -> None:
     """
     Prints a formatted debug message if debugging is enabled.
     """
-    if _debug_enabled:
-        if _startup_silent and prefix not in ("Startup", "Libc"):
-            return
-        counter = _get_next_counter()
-        println(f"\033[37m[{counter:2d}] {emoji} {prefix}: {message}\033[0m")
+    if not _debug_enabled:
+        return
+    if _startup_silent and prefix not in ("Startup", "Libc"):
+        return
+
+    counter = _get_next_counter()
+    formatted_msg = message % args if args else message
+    print(f"\033[37m[{counter:2d}] {emoji} {prefix}: {formatted_msg}\033[0m")
 
 
 def reset_counter_after(func: F) -> F:

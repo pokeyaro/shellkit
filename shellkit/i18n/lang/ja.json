@@ -113,6 +113,7 @@
   "shell.engine.builtin.printf.missing_format": "printf: フォーマット文字列が指定されていません",
   "shell.engine.builtin.printf.usage": "使用法: printf フォーマット [引数...]",
   "shell.engine.builtin.printf.help_hint": "'help printf' または '? printf' を実行して詳細をご覧ください。",
+  "shell.engine.builtin.printf.too_few_arguments": "printf: フォーマット文字列に対して引数が足りません",
   "shell.engine.builtin.printf.error_format": "printf: フォーマットエラー: %s",
   "shell.engine.builtin.printf.error_value": "printf: 値のエラー: %s",
   "shell.engine.builtin.printf.unexpected_error": "printf: 予期しないエラー: %s",

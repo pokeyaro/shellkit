@@ -113,6 +113,7 @@
   "shell.engine.builtin.printf.missing_format": "printf: 포맷 문자열이 누락됨",
   "shell.engine.builtin.printf.usage": "사용법: printf 포맷 [인수...]",
   "shell.engine.builtin.printf.help_hint": "'help printf' 또는 '? printf'를 실행하여 자세한 정보를 확인하세요.",
+  "shell.engine.builtin.printf.too_few_arguments": "printf: 포맷 문자열에 제공된 인수가 부족합니다",
   "shell.engine.builtin.printf.error_format": "printf: 포맷 오류: %s",
   "shell.engine.builtin.printf.error_value": "printf: 값 오류: %s",
   "shell.engine.builtin.printf.unexpected_error": "printf: 예상치 못한 오류: %s",

@@ -113,6 +113,7 @@
   "shell.engine.builtin.printf.missing_format": "printf: missing format string",
   "shell.engine.builtin.printf.usage": "Usage: printf FORMAT [ARGUMENTS...]",
   "shell.engine.builtin.printf.help_hint": "Run 'help printf' or '? printf' for more information.",
+  "shell.engine.builtin.printf.too_few_arguments": "printf: too few arguments provided for format string",
   "shell.engine.builtin.printf.error_format": "printf: format error: %s",
   "shell.engine.builtin.printf.error_value": "printf: value error: %s",
   "shell.engine.builtin.printf.unexpected_error": "printf: unexpected error: %s",

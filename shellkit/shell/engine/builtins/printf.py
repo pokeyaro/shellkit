@@ -52,6 +52,13 @@ def printf_builtin(args: list[str]) -> ExitCode:
         # Preprocess each argument the same way
         processed_values = [process_shell_text(val) for val in values]
 
+        # Simple check: count format specifiers
+        # (this won't catch complex cases like %*.*f, but good enough)
+        expected_count = processed_fmt.count('%') - 2 * processed_fmt.count('%%')
+        if len(processed_values) < expected_count:
+            eprintln(t("shell.engine.builtin.printf.too_few_arguments"))
+            return EXIT_FAILURE
+
         # Execute formatted output with tracing enabled
         with tracing():
             printf(processed_fmt, *processed_values)

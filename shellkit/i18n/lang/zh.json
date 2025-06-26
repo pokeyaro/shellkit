@@ -113,6 +113,7 @@
   "shell.engine.builtin.printf.missing_format": "printf: 缺少格式字符串",
   "shell.engine.builtin.printf.usage": "用法: printf 格式 [参数...]",
   "shell.engine.builtin.printf.help_hint": "运行 'help printf' 或 '? printf' 获取更多信息。",
+  "shell.engine.builtin.printf.too_few_arguments": "printf: 提供的参数数量不足，无法匹配格式字符串",
   "shell.engine.builtin.printf.error_format": "printf: 格式错误: %s",
   "shell.engine.builtin.printf.error_value": "printf: 值错误: %s",
   "shell.engine.builtin.printf.unexpected_error": "printf: 意外错误: %s",

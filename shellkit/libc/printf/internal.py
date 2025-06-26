@@ -24,7 +24,8 @@ def _formatted_str(fmt: str, *args: Any, strict: bool = False) -> str:
     Returns:
         Formatted string result
     """
-    return format_string(fmt, *args, strict)
+    safe_args = args or ()
+    return format_string(fmt, *safe_args, strict)
 
 
 @trace_call("libc.printf.internal")
@@ -44,7 +45,8 @@ def _formatted_write(
     Returns:
         Number of bytes written to the descriptor
     """
-    s = format_string(fmt, *args)
+    safe_args = args or ()
+    s = format_string(fmt, *safe_args)
     if newline:
         s += "\n"
     return write(fd, s, buffered=buffered)
@@ -67,7 +69,7 @@ def _formatted_line(
     Returns:
         Number of bytes written
     """
-    written = _formatted_write(fd, "%s", (s,), newline=auto_wrap, buffered=buffered)
+    written = _formatted_write(fd, "%s", (s,) or (), newline=auto_wrap, buffered=buffered)
 
     if flush:
         flush_fd(fd)

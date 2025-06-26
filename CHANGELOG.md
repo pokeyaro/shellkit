@@ -6,45 +6,55 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [0.1.0-beta10] - 2025-06-26
+
+### Added
+- Format argument check in printf: Basic sanity check added to ensure that the number of arguments matches the number of format specifiers. Prevents silent failures.
+- Internationalized error message: New i18n key shell.engine.builtin.printf.too_few_arguments for handling format argument mismatch.
+- Internal _formatted_str() helper: Safely formats strings without writing to file descriptor. Supports strict mode for argument count validation.
+
+### Changed
+- Safe argument unpacking: _formatted_str() and _formatted_write() now safely handle missing or None arguments via args or ().
+- Debug fallback mechanism: In case eprintln() itself fails (e.g. during format failure), it gracefully falls back to using native print() to prevent infinite loops in tracing.
+
+### Stability
+- This release strengthens robustness in the printf family, especially around argument mismatches.
+- Also improves internal tooling reliability under error conditions.
+
+
 ## [0.1.0-beta9] - 2025-06-26
 
-Fixed
-
-metadata: Fixed a bug where syslib.so build time was not correctly resolved from installed path
+### Fixed
+- metadata: Fixed a bug where syslib.so build time was not correctly resolved from installed path
 
 
 ## [0.1.0-beta8] - 2025-06-26
 
-Changed
+### Changed
+- Refactored runtime/metadata.py: split get_metadata() into get_project_info() and get_syslib_build_time() for clarity
 
-Refactored runtime/metadata.py: split get_metadata() into get_project_info() and get_syslib_build_time() for clarity
-
-Fixed
-
-Fixed incorrect detection of syslib*.so build time when installed via pip
+### Fixed
+- Fixed incorrect detection of syslib*.so build time when installed via pip
 
 
 ## [0.1.0-beta7] - 2025-06-26
 
-Fixed
+### Fixed
+- sleep command: Fixed countdown display leaving residual characters on completion
+- help system: Updated glow installation hints to avoid package manager compatibility issues
+- Improved terminal output clearing in countdown functionality
 
-sleep command: Fixed countdown display leaving residual characters on completion
-help system: Updated glow installation hints to avoid package manager compatibility issues
-Improved terminal output clearing in countdown functionality
+### Changed
+- Installation guidance: Now recommends GitHub releases over package managers for glow
+- Updated installation hints across all supported languages (EN, JA, KO, ZH)
+- Simplified installation instructions to use most reliable method
 
-Changed
-
-Installation guidance: Now recommends GitHub releases over package managers for glow
-Updated installation hints across all supported languages (EN, JA, KO, ZH)
-Simplified installation instructions to use most reliable method
-
-Build System
-
-Breaking: Upgraded cibuildwheel from v2.19.2 to v3.0 for modern Python support
-Added Python 3.13 support across all platforms (macOS, Linux)
-Added Linux ARM64 (aarch64) architecture support for better Raspberry Pi and AWS Graviton compatibility
-Simplified build matrix to reduce CI overhead while maintaining platform coverage
-Enhanced cross-platform wheel building with latest toolchain
+### Build System
+- Breaking: Upgraded cibuildwheel from v2.19.2 to v3.0 for modern Python support
+- Added Python 3.13 support across all platforms (macOS, Linux)
+- Added Linux ARM64 (aarch64) architecture support for better Raspberry Pi and AWS Graviton compatibility
+- Simplified build matrix to reduce CI overhead while maintaining platform coverage
+- Enhanced cross-platform wheel building with latest toolchain
 
 
 ## [0.1.0-beta6] - 2025-06-26
