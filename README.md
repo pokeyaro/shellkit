@@ -93,14 +93,18 @@ Want to see ShellKit in action? Check out our comprehensive examples:
 
 ## 📦 Project Structure (partial)
 
-```
-pysh/
-├── native/      # C code for native syscall implementation (builds syslib.so)
-├── syscall/     # Python-side syscall wrappers via ctypes
-├── libc/        # Custom libc (printf, write, exit)
-├── shell/       # Core engine, built-in commands, runtime, REPL
-├── inspector/   # Debugging and tracing tools
-└── i18n/        # Multilingual dictionaries and support
+```text
+shellkit/
+├── native/         # C code for native syscall implementation (builds syslib.so)
+├── shellkit/       # Main package
+│   ├── syscall/    # Python-side syscall wrappers via ctypes
+│   ├── libc/       # Custom libc (printf, write, exit)
+│   ├── shell/      # Core engine, built-in commands, runtime, REPL
+│   ├── inspector/  # Debugging and tracing tools
+│   └── i18n/       # Multilingual dictionaries and support
+├── benchmarks/     # Performance benchmarks
+├── examples/       # Usage examples and demo logs
+└── tests/          # Test suite
 ```
 
 

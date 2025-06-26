@@ -93,14 +93,18 @@ ShellKit の実際の動作を見てみませんか？包括的なサンプル�
 
 ## 📦 プロジェクト構成 (一部)
 
-```
-pysh/
-├── native/      # C 言語で書かれた syscall 実装
-├── syscall/     # ctypes で Python から syscall を呼び出し
-├── libc/        # カスタム libc (printf, write, exit)
-├── shell/       # 核心エンジン、内藏コマンド、REPL
-├── inspector/   # デバッグ・追跡モジュール
-└── i18n/        # 多言語対応システム
+```text
+shellkit/
+├── native/         # C 言語で書かれた syscall 実装
+├── shellkit/       # メインパッケージ
+│   ├── syscall/    # ctypes で Python から syscall を呼び出し
+│   ├── libc/       # カスタム libc (printf, write, exit)
+│   ├── shell/      # 核心エンジン、内蔵コマンド、REPL
+│   ├── inspector/  # デバッグ・追跡モジュール
+│   └── i18n/       # 多言語対応システム
+├── benchmarks/     # パフォーマンステスト
+├── examples/       # 使用例とデモログ
+└── tests/          # テストスイート
 ```
 
 

@@ -94,13 +94,18 @@ ShellKit의 실제 동작을 보고 싶으신가요? 포괄적인 예제들을 �
 ## 📦 프로젝트 구조 (일부)
 
 ```
-pysh/
-├── native/      # C로 작성된 syscall 구현
-├── syscall/     # Python에서 호출하는 ctypes 기반 래퍼
-├── libc/        # 커스텀 libc (`printf`, `write`, `exit` 등)
-├── shell/       # 핵심 엔진, 내장 명령어, REPL 실행기
-├── inspector/   # 디버그 및 트레이싱 도구
-└── i18n/        # 다국어 지원 및 번역 모듈
+
+shellkit/
+├── native/         # C로 작성된 syscall 구현
+├── shellkit/       # 메인 패키지
+│   ├── syscall/    # Python에서 호출하는 ctypes 기반 래퍼
+│   ├── libc/       # 커스텀 libc (printf, write, exit 등)
+│   ├── shell/      # 핵심 엔진, 내장 명령어, REPL 실행기
+│   ├── inspector/  # 디버그 및 트레이싱 도구
+│   └── i18n/       # 다국어 지원 및 번역 모듈
+├── benchmarks/     # 성능 벤치마크
+├── examples/       # 사용 예제 및 데모 로그
+└── tests/          # 테스트 스위트
 ```
 
 

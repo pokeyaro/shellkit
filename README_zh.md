@@ -85,14 +85,18 @@ pysh [选项]
 
 ## 📦 项目结构（部分）
 
-```
-pysh/
-├── native/      # C 编写的原生 syscall 实现源码（生成 syslib.so）
-├── syscall/     # 原生 syscall 封装（通过 ctypes）
-├── libc/        # 自定义 libc 层（printf、write、exit）
-├── shell/       # 核心引擎、内建命令、运行时、REPL
-├── inspector/   # 调试与追踪系统
-└── i18n/        # 多语言支持与翻译字典
+```text
+shellkit/
+├── native/         # C 编写的原生 syscall 实现源码（生成 syslib.so）
+├── shellkit/       # 主包
+│   ├── syscall/    # 原生 syscall 封装（通过 ctypes）
+│   ├── libc/       # 自定义 libc 层（printf、write、exit）
+│   ├── shell/      # 核心引擎、内建命令、运行时、REPL
+│   ├── inspector/  # 调试与追踪系统
+│   └── i18n/       # 多语言支持与翻译字典
+├── benchmarks/     # 性能基准测试
+├── examples/       # 使用示例与演示日志
+└── tests/          # 测试套件
 ```
 
 
