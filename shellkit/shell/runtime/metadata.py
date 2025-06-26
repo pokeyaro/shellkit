@@ -76,7 +76,7 @@ def get_syslib_build_time() -> str:
     build_time = "MM-YYYY"
 
     try:
-        base_dir = Path(__file__).resolve().parents[3]
+        base_dir = Path(__file__).resolve().parents[2]
         syscall_dir = base_dir / "syscall"
         candidates = list(syscall_dir.glob("syslib*.so"))
         if candidates:

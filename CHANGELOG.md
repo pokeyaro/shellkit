@@ -6,6 +6,13 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [0.1.0-beta9] - 2025-06-26
+
+Fixed
+
+metadata: Fixed a bug where syslib.so build time was not correctly resolved from installed path
+
+
 ## [0.1.0-beta8] - 2025-06-26
 
 Changed
