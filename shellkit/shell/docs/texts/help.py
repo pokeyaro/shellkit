@@ -31,6 +31,7 @@ help (?) - view shell manual pages and built-in command list
   printf FORMAT [...]        Format output like C's printf
   pwd                        Show current directory
   sleep SECONDS [...]        Pause for a while
+  su [user]                  Switch shell to another user
   tree [path]                Show directory structure as a tree
   uname [opts]               Show kernel/system info
   which CMD                  Locate a command
@@ -69,6 +70,7 @@ help (?) - シェルのマニュアルと組み込みコマンド一覧を表示
   printf フォーマット [...]      C風の形式で出力
   pwd                            現在のディレクトリを表示
   sleep 秒数 [...]               一時停止
+  su [ユーザー]                  別のユーザーとしてシェルを開始
   tree [パス]                    ディレクトリ構造をツリー表示
   uname [オプション]             カーネル/システム情報を表示
   which CMD                      コマンドの場所を表示
@@ -107,6 +109,7 @@ help (?) - 셸 매뉴얼 페이지와 내장 명령어 목록을 봅니다
   printf 형식 [...]          C의 printf와 같은 형식 출력
   pwd                        현재 디렉터리 표시
   sleep 초 [...]             잠시 일시정지
+  su [사용자]                다른 사용자로 셸 전환
   tree [경로]                디렉터리 구조를 트리로 표시
   uname [옵션]               커널/시스템 정보 표시
   which CMD                  명령어 위치 찾기
@@ -145,6 +148,7 @@ help (?) - 查看 shell 帮助文档和内建命令列表
   printf 格式 [...]           类似 C 的 printf 格式化输出
   pwd                         显示当前工作目录
   sleep 秒数 [...]            暂停执行
+  su [用户名]                 切换为其他用户的 shell
   tree [路径]                 以树状结构展示目录
   uname [选项]                查看系统内核信息
   which 命令名                查找命令路径

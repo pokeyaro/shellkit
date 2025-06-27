@@ -6,6 +6,15 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [0.2.0-beta3] - 2025-06-27
+
+### Changed
+- `help.py` updated: added `su` entry to built-in commands list in all supported languages (EN, JA, KO, ZH)
+
+### Notes
+- This is a documentation-only update. No functional changes were made to the shell runtime.
+
+
 ## [0.2.0-beta2] - 2025-06-27
 
 ### Features
