@@ -111,6 +111,22 @@ shellkit/
 | **Windows**                | ❌ 不支持 | 未实现；Windows 没有统一的 `syscall()` 接口|
 
 
+## 🧭 路线图
+
+ShellKit 已具备稳定可用的核心功能，未来我们计划探索以下方向：
+
+- 🔌 **插件系统**: 允许用户注册自定义内建命令、别名和函数
+- 🧠 **深度追踪模式**: 实验性地深入追踪底层系统调用（如 eBPF 或 syscall 捕获）
+- 🧳 **持久化配置**: 保存环境变量、历史记录、自定义设置等
+- 🧪 **更多内建命令**: 扩展如 `ls`, `cat`, `grep` 等常见命令
+- 💡 **多行脚本执行**: 支持一次运行多行命令或脚本块
+
+如果你对这些功能感兴趣 —— 或有其他创意 —— 欢迎 [发起讨论](https://github.com/pokeyaro/shellkit/discussions) 或 [提交 PR](https://github.com/pokeyaro/shellkit/pulls)。\
+ShellKit 欢迎所有形式的贡献者，无论是点子交流还是直接写代码！
+
+> 💬 把你的兴趣变成贡献 —— 有社区参与，ShellKit 会变得更好！
+
+
 ## 📌 更新日志
 
 版本历史详见 [CHANGELOG.md](./CHANGELOG.md) 文件。

@@ -6,6 +6,25 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [0.2.0-beta1] - 2025-06-27
+
+### Features
+- Introduced detailed roadmap and contribution call in `README.md`
+
+### Project Structure
+- Added `.github/ISSUE_TEMPLATE`:
+  - `bug_report.yml` – Standardized bug report form
+  - `feature_request.yml` – Structured feature suggestion template
+  - `config.yml` – Issue template configuration
+
+- Added `.github/PULL_REQUEST_TEMPLATE.md` – With checklist and contribution guide link
+
+### Community
+- Added `CONTRIBUTING.md` with clear guidelines for new contributors
+- Improved phrasing and contributor-facing copy across templates
+- Enabled GitHub Discussions and created default categories (Announcements, Bug Reports, Ideas, Help, Show & Tell)
+
+
 ## [0.1.0] - 2025-06-26
 
 ### Features

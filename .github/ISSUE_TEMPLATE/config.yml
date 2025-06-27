@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Ask a Question or Get Help
+    url: https://github.com/pokeyaro/shellkit/discussions
+    about: Start a discussion for help, usage advice, or concept exploration.

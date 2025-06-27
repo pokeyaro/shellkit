@@ -1,0 +1,63 @@
+name: 🐞 Bug Report
+description: Report a bug or unexpected behavior in ShellKit
+labels: [bug, needs-triage]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug in **ShellKit** 🐚  
+        Please help us reproduce and fix the issue by filling out this form.
+
+  - type: input
+    id: title
+    attributes:
+      label: Bug Summary
+      placeholder: e.g., pysh crashes when running echo with escape sequences
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: What did you expect to happen, and what actually happened?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: Share the exact steps to reproduce the issue.
+      placeholder: |
+        1. Run `pysh`
+        2. Type `echo -n "\tbroken"`
+        3. Observe incorrect formatting or crash
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - macOS (Intel)
+        - macOS (Apple Silicon)
+        - Linux (x86_64)
+        - Linux (ARM64)
+        - Other (please specify in description)
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: ShellKit Version
+      placeholder: e.g., 0.2.3
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Terminal Output / Trace Logs
+      description: Paste any relevant error messages or stack traces.
+      render: shell

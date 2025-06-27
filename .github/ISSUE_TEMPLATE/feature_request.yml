@@ -1,0 +1,48 @@
+name: ✨ Feature Request
+description: Suggest a new command, shell behavior, or internal capability
+labels: [enhancement, needs-triage]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Got a great idea for improving **ShellKit**? We'd love to hear it!  
+        Please fill out the details below to help us evaluate the request.
+
+  - type: input
+    id: title
+    attributes:
+      label: Feature Summary
+      placeholder: e.g., Add support for multi-line command blocks
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Feature Description
+      description: Describe the feature and what it enables for users.
+    validations:
+      required: true
+
+  - type: textarea
+    id: usecase
+    attributes:
+      label: Use Case / Motivation
+      description: Why do you want this feature? What problem does it solve?
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Any existing workarounds? Other tools that inspired this?
+
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Impacted Areas
+      options:
+        - label: CLI / Shell usage
+        - label: libc or syscall bridge
+        - label: REPL behavior
+        - label: Internal command system
+        - label: Tracing / Debugging
+        - label: Documentation
+        - label: Other (please explain)
