@@ -129,7 +129,7 @@ ShellKit is stable and usable, but we plan to explore some exciting features in 
 - 🧪 **More Built-ins**: Extend shell with commands like `ls`, `cat`, `grep`
 - 💡 **Multiline Script Execution**: Support running multi-line commands or script blocks in one go
 
-If you're interested in any of these — or have other ideas in mind — feel free to [open a discussion](https://github.com/pokeyaro/shellkit/discussions) or [submit a pull request](https://github.com/pokeyaro/shellkit/pulls). \ 
+If you're interested in any of these — or have other ideas in mind — feel free to [open a discussion](https://github.com/pokeyaro/shellkit/discussions) or [submit a pull request](https://github.com/pokeyaro/shellkit/pulls). \
 We welcome all contributors — from feature suggestions to actual code!
 
 > 💬 Turn your interest into contribution — ShellKit grows better with community voices.
