@@ -2,9 +2,7 @@
 
 ## 用法（SYNOPSIS）
 
-```shell
-echo [-n] [text...]
-```
+    echo [-n] [文本...]
 
 
 ## 描述（DESCRIPTION）

@@ -2,9 +2,7 @@
 
 ## 使用法（SYNOPSIS）
 
-```shell
-export VAR=value [VAR2=value2 ...]
-```
+    export VAR=価値 [VAR2=価値2 ...]
 
 
 ## 説明（DESCRIPTION）

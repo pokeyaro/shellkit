@@ -2,9 +2,7 @@
 
 ## 使用法（SYNOPSIS）
 
-```shell
-sleep SECONDS [--quiet] [--countdown=TEXT] [--done=TEXT]
-```
+    sleep 秒 [--quiet] [--countdown=TEXT] [--done=TEXT]
 
 
 ## 説明（DESCRIPTION）

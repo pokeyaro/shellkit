@@ -2,9 +2,7 @@
 
 ## 用法（SYNOPSIS）
 
-```
-arch [选项]
-```
+    arch [选项]
 
 
 ## 描述（DESCRIPTION）

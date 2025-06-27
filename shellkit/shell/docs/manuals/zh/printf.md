@@ -2,9 +2,7 @@
 
 ## 用法（SYNOPSIS）
 
-```shell
-printf format [arguments...]
-```
+    printf 格式 [参数...]
 
 
 ## 描述（DESCRIPTION）

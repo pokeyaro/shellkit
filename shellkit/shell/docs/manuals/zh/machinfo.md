@@ -2,9 +2,7 @@
 
 ## 用法（SYNOPSIS）
 
-```shell
-machinfo [--json] [--short]
-```
+    machinfo [--json] [--short]
 
 
 ## 描述（DESCRIPTION）

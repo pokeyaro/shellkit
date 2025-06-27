@@ -2,10 +2,8 @@
 
 ## 用法（SYNOPSIS）
 
-```shell
-locale [options]
-locale [<language_code>]
-```
+    locale [选项]
+    locale [<语言代码>]
 
 
 ## 描述（DESCRIPTION）

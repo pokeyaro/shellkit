@@ -2,11 +2,9 @@
 
 ## 使用法（SYNOPSIS）
 
-```
-alias
-alias 名前
-alias 名前='コマンド'
-```
+    alias
+    alias 名前
+    alias 名前='コマンド'
 
 
 ## 説明（DESCRIPTION）

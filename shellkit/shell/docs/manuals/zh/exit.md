@@ -2,9 +2,7 @@
 
 ## 用法（SYNOPSIS）
 
-```shell
-exit [code]
-```
+    exit [代码]
 
 
 ## 描述（DESCRIPTION）

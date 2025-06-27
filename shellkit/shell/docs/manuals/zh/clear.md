@@ -2,9 +2,7 @@
 
 ## 用法（SYNOPSIS）
 
-```
-clear
-```
+    clear
 
 
 ## 描述（DESCRIPTION）

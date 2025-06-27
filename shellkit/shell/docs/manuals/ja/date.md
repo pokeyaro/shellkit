@@ -2,9 +2,7 @@
 
 ## 使用法（SYNOPSIS）
 
-```shell
-date [options]
-```
+    date [オプション]
 
 
 ## 説明（DESCRIPTION）

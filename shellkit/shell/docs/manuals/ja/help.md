@@ -2,10 +2,8 @@
 
 ## 使用法（SYNOPSIS）
 
-```shell
-help [COMMAND]
-? [COMMAND]
-```
+    help [コマンド]
+    ? [コマンド]
 
 
 ## 説明（DESCRIPTION）

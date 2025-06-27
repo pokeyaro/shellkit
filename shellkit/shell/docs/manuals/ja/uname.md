@@ -2,9 +2,7 @@
 
 ## 使用法（SYNOPSIS）
 
-```shell
-uname [options]
-```
+    uname [オプション]
 
 
 ## 説明（DESCRIPTION）

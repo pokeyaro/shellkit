@@ -2,9 +2,8 @@
 
 ## 用法（SYNOPSIS）
 
-```
-cd [路径]
-```
+    cd [路径]
+
 
 ## 描述（DESCRIPTION）
 

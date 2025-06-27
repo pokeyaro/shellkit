@@ -2,9 +2,7 @@
 
 ## 使用法（SYNOPSIS）
 
-```shell
-env [options]
-```
+    env [オプション]
 
 
 ## 説明（DESCRIPTION）

@@ -2,9 +2,7 @@
 
 ## 使用法（SYNOPSIS）
 
-```shell
-whoami
-```
+    whoami
 
 
 ## 説明（DESCRIPTION）

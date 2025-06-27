@@ -2,9 +2,7 @@
 
 ## 使用法（SYNOPSIS）
 
-```shell
-printf format [arguments...]
-```
+    printf フォーマット [引数...]
 
 
 ## 説明（DESCRIPTION）

@@ -2,9 +2,7 @@
 
 ## 使用法（SYNOPSIS）
 
-```shell
-which COMMAND [COMMAND2 ...]
-```
+    which コマンド [コマンド2 ...]
 
 
 ## 説明（DESCRIPTION）

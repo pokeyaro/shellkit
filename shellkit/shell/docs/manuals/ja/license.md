@@ -2,9 +2,7 @@
 
 ## 使用法（SYNOPSIS）
 
-```shell
-license
-```
+    license
 
 
 ## 説明（DESCRIPTION）

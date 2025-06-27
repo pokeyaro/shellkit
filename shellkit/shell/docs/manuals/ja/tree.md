@@ -2,9 +2,7 @@
 
 ## 使用法（SYNOPSIS）
 
-```shell
-tree [path] [options]
-```
+    tree [パス] [オプション]
 
 
 ## 説明（DESCRIPTION）

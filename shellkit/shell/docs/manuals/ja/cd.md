@@ -2,9 +2,7 @@
 
 ## 使用法（SYNOPSIS）
 
-```
-cd [パス]
-```
+    cd [パス]
 
 
 ## 説明（DESCRIPTION）

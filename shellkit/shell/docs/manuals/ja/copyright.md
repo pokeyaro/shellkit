@@ -2,9 +2,7 @@
 
 ## 使用法（SYNOPSIS）
 
-```shell
-copyright
-```
+    copyright
 
 
 ## 説明（DESCRIPTION）

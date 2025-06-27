@@ -2,9 +2,7 @@
 
 ## 使用法（SYNOPSIS）
 
-```shell
-pwd
-```
+    pwd
 
 
 ## 説明（DESCRIPTION）

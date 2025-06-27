@@ -2,9 +2,7 @@
 
 ## 用法（SYNOPSIS）
 
-```shell
-env [options]
-```
+    env [选项]
 
 
 ## 描述（DESCRIPTION）
