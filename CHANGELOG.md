@@ -6,6 +6,18 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [0.2.0-beta2] - 2025-06-27
+
+### Features
+- Added the `su` command with dynamic user switching support (Linux/macOS compatible).
+- Automatically detects platform and uses `su -s <pysh>` on Linux or `sudo <pysh>` on macOS.
+- Added localized `su.md` manuals in English, Chinese, Japanese, and Korean.
+- Introduced new i18n keys for all related prompts and error messages.
+
+### Documentation
+- Unified and improved the usage description in both Chinese and Japanese versions of the `su.md` manual for clarity and consistency.
+
+
 ## [0.2.0-beta1] - 2025-06-27
 
 ### Features

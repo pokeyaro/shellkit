@@ -24,6 +24,7 @@ from .machinfo import machinfo_builtin
 from .printf import printf_builtin
 from .pwd import pwd_builtin
 from .sleep import sleep_builtin
+from .su import su_builtin
 from .tree import tree_builtin
 from .uname import uname_builtin
 from .which import which_builtin
@@ -50,6 +51,7 @@ __all__ = [
     "printf_builtin",
     "pwd_builtin",
     "sleep_builtin",
+    "su_builtin",
     "tree_builtin",
     "uname_builtin",
     "which_builtin",
